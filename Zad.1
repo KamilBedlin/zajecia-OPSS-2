@@ -1,0 +1,30 @@
+//zad.1
+document.querySelector('h1').nodeType;
+
+let p = document.getElementById('contact');
+let tab = [];
+for(let key in p){
+	tab.push(key);
+}
+console.log(tab.sort());
+
+document.getElementById('about').innerHTML;
+
+//zad.2
+let p = document.createTextNode('nowy paragraf');
+let newp = document.createElement('p');
+newp.appendChild(p);
+document.querySelector('p').insertAdjacentElement('afterend', newp);
+
+//zad.3
+let li = document.createElement('li');
+let a = document.createElement('a');
+li.appendChild(a);
+let umk = document.createTextNode('umk');
+a.appendChild(umk);
+a.href = "https://www.umk.pl/";
+document.querySelector('li').nextElementSibling.insertAdjacentElement('afterend', li);
+
+//zad.4
+let banner = document.getElementById('banner');
+banner.parentNode.removeChild(banner);
