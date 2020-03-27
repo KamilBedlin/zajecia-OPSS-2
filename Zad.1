@@ -28,3 +28,34 @@ document.querySelector('li').nextElementSibling.insertAdjacentElement('afterend'
 //zad.4
 let banner = document.getElementById('banner');
 banner.parentNode.removeChild(banner);
+
+//zad.5
+let body_tags = document.querySelectorAll("body > *");
+
+function reverseText(text) { 
+    return text.split('').reverse().join(''); 
+}
+
+function findAndReverse(tags) {                  
+    let subtags = tags.querySelectorAll("*");
+
+    if (subtags.length == 0) {
+        tags.innerText = reverseText(tags.innerText); 
+    } else {
+        subtags.forEach(tag => {
+            findAndReverse(tag); 
+        });
+    }
+}
+
+body_tags.forEach(tag => {        
+    findAndReverse(tag);
+});
+
+let force_links = document.querySelectorAll("#contact > ul > li > a");
+force_links.forEach(tag => {                       
+    tag.innerText = reverseText(tag.innerText);
+});
+
+let last_link = document.querySelector("#contact > ul > li:last-child");
+last_link.innerText = reverseText(last_link.innerText); 
